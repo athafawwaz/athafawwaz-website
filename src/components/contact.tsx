@@ -174,7 +174,7 @@ export default function Contact() {
                 >
                     <div className="flex flex-col md:flex-row items-center justify-between gap-6">
                         <div className="text-white/20 text-sm">
-                            &copy; {new Date().getFullYear()} Atha Fawwaz Firjatullah. Crafted with precision.
+                            &copy; {new Date().getFullYear()} Atha Fawwaz Firjatullah. All rights reserved.
                         </div>
 
                         <div className="flex items-center gap-4">
