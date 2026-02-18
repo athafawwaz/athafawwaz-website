@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 
+
 const NAV_ITEMS = [
     { label: "About", href: "#about" },
     { label: "Skills", href: "#skills" },
@@ -61,15 +62,17 @@ export default function Navbar() {
                 {/* Logo */}
                 <motion.a
                     href="#"
-                    className="text-lg md:text-xl font-bold tracking-[0.2em] text-white"
+                    className="group flex items-center gap-0.5"
                     whileHover={{ scale: 1.05 }}
                     onClick={(e) => {
                         e.preventDefault();
                         window.scrollTo({ top: 0, behavior: "smooth" });
                     }}
                 >
-                    <span className="text-neon-cyan">A</span>THA
-                    <span className="text-neon-cyan">.</span>
+                    <span className="text-2xl md:text-3xl font-black tracking-widest text-white drop-shadow-[0_0_10px_rgba(0,229,255,0.5)] group-hover:text-neon-cyan transition-colors duration-300">
+                        AF
+                    </span>
+                    <span className="text-neon-cyan text-3xl md:text-4xl animate-pulse font-black">.</span>
                 </motion.a>
 
                 {/* Desktop Links */}
@@ -79,8 +82,8 @@ export default function Navbar() {
                             key={item.href}
                             onClick={() => handleClick(item.href)}
                             className={`relative text-sm tracking-[0.15em] uppercase transition-colors duration-300 ${activeSection === item.href
-                                    ? "text-neon-cyan"
-                                    : "text-white/60 hover:text-white"
+                                ? "text-neon-cyan"
+                                : "text-white/60 hover:text-white"
                                 }`}
                             whileHover={{ y: -2 }}
                             transition={{ type: "spring", stiffness: 400, damping: 17 }}
