@@ -81,7 +81,7 @@ export default function Experience() {
                 {/* Timeline */}
                 <div ref={containerRef} className="relative">
                     {/* Background line (gray) */}
-                    <div className="absolute left-6 md:left-8 top-0 bottom-0 w-px bg-white/10" />
+                    <div className="absolute left-6 md:left-8 top-0 bottom-0 w-px bg-black/10 dark:bg-white/10" />
 
                     {/* Animated progress line */}
                     <motion.div
@@ -109,7 +109,7 @@ export default function Experience() {
                                     <motion.div
                                         className="glass rounded-2xl p-6 md:p-8"
                                         whileHover={{
-                                            borderColor: "rgba(0, 229, 255, 0.2)",
+                                            borderColor: "var(--color-primary)",
                                             y: -4,
                                             transition: { duration: 0.3 },
                                         }}
@@ -119,10 +119,10 @@ export default function Experience() {
                                                 <Icon className="w-5 h-5 text-neon-cyan" />
                                             </div>
                                             <div>
-                                                <h3 className="text-lg md:text-xl font-semibold text-white">
+                                                <h3 className="text-lg md:text-xl font-semibold text-black dark:text-white">
                                                     {exp.title}
                                                 </h3>
-                                                <p className="text-white/40 text-sm mt-0.5">
+                                                <p className="text-black/40 dark:text-white/40 text-sm mt-0.5">
                                                     {exp.company}
                                                 </p>
                                             </div>
@@ -136,7 +136,7 @@ export default function Experience() {
                                             {exp.bullets.map((b, j) => (
                                                 <li
                                                     key={j}
-                                                    className="text-white/50 text-sm leading-relaxed flex items-start gap-2"
+                                                    className="text-black/50 dark:text-white/50 text-sm leading-relaxed flex items-start gap-2"
                                                 >
                                                     <span className="text-neon-cyan/60 mt-1.5 shrink-0 w-1 h-1 rounded-full bg-neon-cyan/60" />
                                                     {b}

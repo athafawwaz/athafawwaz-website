@@ -128,6 +128,35 @@
   --sidebar-accent-foreground: #fafafa;
   --sidebar-border: rgba(255, 255, 255, 0.08);
   --sidebar-ring: #00e5ff;
+  --color-glass-border: rgba(255, 255, 255, 0.08);
+  --color-glass-bg: rgba(255, 255, 255, 0.03);
+}
+
+.light {
+  --background: #fafafa;
+  --foreground: #0a0a0a;
+  --card: #ffffff;
+  --card-foreground: #0a0a0a;
+  --popover: #ffffff;
+  --popover-foreground: #0a0a0a;
+  --primary: #007cf0;
+  --primary-foreground: #fafafa;
+  --secondary: #e4e4e7;
+  --secondary-foreground: #18181b;
+  --muted: #f4f4f5;
+  --muted-foreground: #71717a;
+  --accent: #f4f4f5;
+  --accent-foreground: #18181b;
+  --destructive: #ef4444;
+  --border: #e4e4e7;
+  --input: #e4e4e7;
+  --ring: #007cf0;
+  --radius: 0.625rem;
+  --color-cyber-black: #fafafa;
+  /* Invert for light mode context if needed */
+  --color-cyber-dark: #f4f4f5;
+  --color-glass-border: rgba(0, 0, 0, 0.5);
+  --color-glass-bg: rgba(255, 255, 255, 0.6);
 }
 
 /* ===== Base Styles ===== */
@@ -141,7 +170,7 @@ html {
   }
 
   body {
-    @apply bg-cyber-black text-foreground font-sans;
+    @apply bg-background text-foreground font-sans;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
@@ -167,10 +196,10 @@ html {
 
 /* ===== Glass Utility ===== */
 .glass {
-  background: rgba(255, 255, 255, 0.03);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: var(--color-glass-bg);
+  backdrop-filter: blur(40px);
+  -webkit-backdrop-filter: blur(40px);
+  border-bottom: 1px solid var(--color-glass-border);
 }
 
 /* ===== Neon Text Glow ===== */

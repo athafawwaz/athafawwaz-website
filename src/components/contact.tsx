@@ -53,7 +53,7 @@ export default function Contact() {
                                     <Input
                                         id="name"
                                         placeholder="Your Name"
-                                        className="bg-white/[0.03] border-white/10 text-white placeholder:text-white/20 focus:border-neon-cyan/50 focus:ring-neon-cyan/20 h-12 rounded-xl"
+                                        className="bg-black/[0.03] dark:bg-white/[0.03] border-black/10 dark:border-white/10 text-black dark:text-white placeholder:text-black/20 dark:placeholder:text-white/20 focus:border-neon-cyan/50 focus:ring-neon-cyan/20 h-12 rounded-xl"
                                     />
                                 </div>
                                 <div>
@@ -67,7 +67,7 @@ export default function Contact() {
                                         id="email"
                                         type="email"
                                         placeholder="your@email.com"
-                                        className="bg-white/[0.03] border-white/10 text-white placeholder:text-white/20 focus:border-neon-cyan/50 focus:ring-neon-cyan/20 h-12 rounded-xl"
+                                        className="bg-black/[0.03] dark:bg-white/[0.03] border-black/10 dark:border-white/10 text-black dark:text-white placeholder:text-black/20 dark:placeholder:text-white/20 focus:border-neon-cyan/50 focus:ring-neon-cyan/20 h-12 rounded-xl"
                                     />
                                 </div>
                             </div>
@@ -82,7 +82,7 @@ export default function Contact() {
                                     id="message"
                                     placeholder="Tell me about your project..."
                                     rows={5}
-                                    className="bg-white/[0.03] border-white/10 text-white placeholder:text-white/20 focus:border-neon-cyan/50 focus:ring-neon-cyan/20 rounded-xl resize-none"
+                                    className="bg-black/[0.03] dark:bg-white/[0.03] border-black/10 dark:border-white/10 text-black dark:text-white placeholder:text-black/20 dark:placeholder:text-white/20 focus:border-neon-cyan/50 focus:ring-neon-cyan/20 rounded-xl resize-none"
                                 />
                             </div>
                             <Button
@@ -104,7 +104,7 @@ export default function Contact() {
                         viewport={{ once: true, margin: "-80px" }}
                         transition={{ duration: 0.6, delay: 0.2 }}
                     >
-                        <p className="text-white/40 text-sm leading-relaxed">
+                        <p className="text-black/40 dark:text-white/40 text-sm leading-relaxed">
                             I&apos;m always open to discussing new projects, creative ideas, or
                             opportunities to be part of your vision. Feel free to reach out!
                         </p>
@@ -143,18 +143,18 @@ export default function Contact() {
                                             <Icon className="w-4 h-4 text-neon-cyan" />
                                         </div>
                                         <div>
-                                            <p className="text-white/30 text-xs tracking-[0.15em] uppercase">
+                                            <p className="text-black/30 dark:text-white/30 text-xs tracking-[0.15em] uppercase">
                                                 {item.label}
                                             </p>
                                             {item.href ? (
                                                 <a
                                                     href={item.href}
-                                                    className="text-white/70 text-sm hover:text-neon-cyan transition-colors"
+                                                    className="text-black/70 dark:text-white/70 text-sm hover:text-neon-cyan transition-colors"
                                                 >
                                                     {item.value}
                                                 </a>
                                             ) : (
-                                                <p className="text-white/70 text-sm">{item.value}</p>
+                                                <p className="text-black/70 dark:text-white/70 text-sm">{item.value}</p>
                                             )}
                                         </div>
                                     </div>
@@ -173,7 +173,7 @@ export default function Contact() {
                     transition={{ duration: 0.6 }}
                 >
                     <div className="flex flex-col md:flex-row items-center justify-between gap-6">
-                        <div className="text-white/20 text-sm">
+                        <div className="text-black/20 dark:text-white/20 text-sm">
                             &copy; {new Date().getFullYear()} Atha Fawwaz Firjatullah. All rights reserved.
                         </div>
 
@@ -197,7 +197,7 @@ export default function Contact() {
                                         href={social.href}
                                         target="_blank"
                                         rel="noopener noreferrer"
-                                        className="w-10 h-10 rounded-full border border-white/10 bg-white/[0.03] flex items-center justify-center text-white/40 hover:text-neon-cyan hover:border-neon-cyan/30 transition-all duration-300"
+                                        className="w-10 h-10 rounded-full border border-black/10 dark:border-white/10 bg-black/[0.03] dark:bg-white/[0.03] flex items-center justify-center text-black/40 dark:text-white/40 hover:text-neon-cyan hover:border-neon-cyan/30 transition-all duration-300"
                                         whileHover={{ scale: 1.1, y: -2 }}
                                         whileTap={{ scale: 0.95 }}
                                         aria-label={social.label}

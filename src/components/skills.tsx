@@ -87,7 +87,7 @@ export default function Skills() {
                             className="glass rounded-2xl p-6 md:p-8"
                             variants={categoryVariants}
                             whileHover={{
-                                borderColor: "rgba(0, 229, 255, 0.2)",
+                                borderColor: "var(--color-primary)",
                                 transition: { duration: 0.3 },
                             }}
                         >
@@ -105,7 +105,7 @@ export default function Skills() {
                                             borderColor: "rgba(0, 229, 255, 0.5)",
                                             transition: { duration: 0.2 },
                                         }}
-                                        className="px-4 py-2 rounded-full text-sm text-white/70 border border-white/10 bg-white/[0.03] hover:text-white transition-colors cursor-default"
+                                        className="px-4 py-2 rounded-full text-sm text-black/70 dark:text-white/70 border border-black/20 dark:border-white/10 bg-black/[0.03] dark:bg-white/[0.03] hover:text-black dark:hover:text-white transition-colors cursor-default"
                                     >
                                         {skill}
                                     </motion.span>

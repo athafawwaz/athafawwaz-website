@@ -31,7 +31,7 @@ export default function About() {
 
                 {/* Bio */}
                 <motion.p
-                    className="text-white/50 text-base md:text-lg leading-relaxed max-w-3xl"
+                    className="text-black/60 dark:text-white/50 text-base md:text-lg leading-relaxed max-w-3xl"
                     initial={{ opacity: 0, y: 30 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true, margin: "-100px" }}
@@ -39,7 +39,7 @@ export default function About() {
                 >
                     A visionary IT student and Developer specializing in Web Development and ERP Systems.
                     Currently optimizing enterprise workflows at{" "}
-                    <span className="text-white/80 font-medium">PT Pupuk Sriwidjaja Palembang</span>{" "}
+                    <span className="text-black/80 dark:text-white/80 font-medium">PT Pupuk Sriwidjaja Palembang</span>{" "}
                     using Odoo, n8n, and Next.js. I bridge the gap between complex backend logic
                     and sleek frontend experiences.
                 </motion.p>
@@ -66,14 +66,14 @@ export default function About() {
                             viewport={{ once: true }}
                             transition={{ delay: 0.4 + i * 0.1 }}
                             whileHover={{
-                                borderColor: "rgba(0, 229, 255, 0.3)",
+                                borderColor: "var(--color-primary)",
                                 transition: { duration: 0.3 },
                             }}
                         >
                             <p className="text-2xl md:text-3xl font-bold text-neon-cyan text-glow">
                                 {stat.value}
                             </p>
-                            <p className="text-white/40 text-xs tracking-[0.15em] uppercase mt-2">
+                            <p className="text-black/40 dark:text-white/40 text-xs tracking-[0.15em] uppercase mt-2">
                                 {stat.label}
                             </p>
                         </motion.div>

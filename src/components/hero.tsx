@@ -189,7 +189,7 @@ export default function Hero() {
 
                 {/* Subtitle */}
                 <motion.p
-                    className="mt-6 md:mt-8 text-white/50 text-base md:text-lg max-w-2xl mx-auto leading-relaxed"
+                    className="mt-6 md:mt-8 text-black/60 dark:text-white/50 text-base md:text-lg max-w-2xl mx-auto leading-relaxed"
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 1.5, duration: 0.6 }}
@@ -223,7 +223,7 @@ export default function Hero() {
                 animate={{ y: [0, 8, 0] }}
                 transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
             >
-                <ChevronDown className="w-6 h-6 text-white/20" />
+                <ChevronDown className="w-6 h-6 text-black/20 dark:text-white/20" />
             </motion.div>
         </section>
     );

@@ -4,6 +4,8 @@ import { useEffect, useRef, useState } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 
 
+import ThemeToggle from "./theme-toggle";
+
 const NAV_ITEMS = [
     { label: "About", href: "#about" },
     { label: "Skills", href: "#skills" },
@@ -55,7 +57,7 @@ export default function Navbar() {
             transition={{ duration: 0.8, ease: "easeOut" }}
         >
             <motion.div
-                className="absolute inset-0 glass"
+                className="absolute inset-0 glass backdrop-blur-3xl"
                 style={{ opacity: bgOpacity }}
             />
             <div className="relative flex items-center justify-between h-16 md:h-20">
@@ -69,7 +71,7 @@ export default function Navbar() {
                         window.scrollTo({ top: 0, behavior: "smooth" });
                     }}
                 >
-                    <span className="text-2xl md:text-3xl font-black tracking-widest text-white drop-shadow-[0_0_10px_rgba(0,229,255,0.5)] group-hover:text-neon-cyan transition-colors duration-300">
+                    <span className="text-2xl md:text-3xl font-black tracking-widest text-black dark:text-white drop-shadow-[0_0_10px_rgba(0,229,255,0.5)] group-hover:text-neon-cyan transition-colors duration-300">
                         AF
                     </span>
                     <span className="text-neon-cyan text-3xl md:text-4xl animate-pulse font-black">.</span>
@@ -83,7 +85,7 @@ export default function Navbar() {
                             onClick={() => handleClick(item.href)}
                             className={`relative text-sm tracking-[0.15em] uppercase transition-colors duration-300 ${activeSection === item.href
                                 ? "text-neon-cyan"
-                                : "text-white/60 hover:text-white"
+                                : "text-black/60 hover:text-black dark:text-white/60 dark:hover:text-white"
                                 }`}
                             whileHover={{ y: -2 }}
                             transition={{ type: "spring", stiffness: 400, damping: 17 }}
@@ -98,34 +100,38 @@ export default function Navbar() {
                             )}
                         </motion.button>
                     ))}
+                    <ThemeToggle />
                 </div>
 
                 {/* Mobile Hamburger */}
-                <button
-                    className="md:hidden relative z-50 w-8 h-8 flex flex-col justify-center items-center gap-1.5"
-                    onClick={() => setMobileOpen(!mobileOpen)}
-                    aria-label="Toggle menu"
-                >
-                    <motion.span
-                        className="block w-6 h-px bg-white"
-                        animate={mobileOpen ? { rotate: 45, y: 4 } : { rotate: 0, y: 0 }}
-                    />
-                    <motion.span
-                        className="block w-6 h-px bg-white"
-                        animate={mobileOpen ? { opacity: 0 } : { opacity: 1 }}
-                    />
-                    <motion.span
-                        className="block w-6 h-px bg-white"
-                        animate={
-                            mobileOpen ? { rotate: -45, y: -4 } : { rotate: 0, y: 0 }
-                        }
-                    />
-                </button>
+                <div className="md:hidden flex items-center gap-4">
+                    <ThemeToggle />
+                    <button
+                        className="relative z-50 w-8 h-8 flex flex-col justify-center items-center gap-1.5"
+                        onClick={() => setMobileOpen(!mobileOpen)}
+                        aria-label="Toggle menu"
+                    >
+                        <motion.span
+                            className="block w-6 h-px bg-black dark:bg-white"
+                            animate={mobileOpen ? { rotate: 45, y: 4 } : { rotate: 0, y: 0 }}
+                        />
+                        <motion.span
+                            className="block w-6 h-px bg-black dark:bg-white"
+                            animate={mobileOpen ? { opacity: 0 } : { opacity: 1 }}
+                        />
+                        <motion.span
+                            className="block w-6 h-px bg-black dark:bg-white"
+                            animate={
+                                mobileOpen ? { rotate: -45, y: -4 } : { rotate: 0, y: 0 }
+                            }
+                        />
+                    </button>
+                </div>
             </div>
 
             {/* Mobile Menu */}
             <motion.div
-                className="md:hidden fixed inset-0 bg-cyber-black/95 backdrop-blur-xl flex flex-col items-center justify-center gap-8"
+                className="md:hidden fixed inset-0 bg-cyber-black/95 dark:bg-cyber-black/95 bg-white/95 backdrop-blur-xl flex flex-col items-center justify-center gap-8"
                 initial={false}
                 animate={mobileOpen ? { opacity: 1, pointerEvents: "auto" as const } : { opacity: 0, pointerEvents: "none" as const }}
                 transition={{ duration: 0.3 }}
@@ -134,7 +140,7 @@ export default function Navbar() {
                     <motion.button
                         key={item.href}
                         onClick={() => handleClick(item.href)}
-                        className="text-2xl tracking-[0.2em] uppercase text-white/80 hover:text-neon-cyan transition-colors"
+                        className="text-2xl tracking-[0.2em] uppercase text-black/80 dark:text-white/80 hover:text-neon-cyan transition-colors"
                         initial={{ opacity: 0, y: 20 }}
                         animate={mobileOpen ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
                         transition={{ delay: i * 0.1, duration: 0.3 }}

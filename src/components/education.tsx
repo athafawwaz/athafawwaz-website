@@ -52,7 +52,7 @@ export default function Education() {
                             viewport={{ once: true, margin: "-80px" }}
                             transition={{ duration: 0.6, delay: i * 0.15 }}
                             whileHover={{
-                                borderColor: "rgba(0, 229, 255, 0.2)",
+                                borderColor: "var(--color-primary)",
                                 y: -4,
                                 transition: { duration: 0.3 },
                             }}
@@ -62,10 +62,10 @@ export default function Education() {
                                 <GraduationCap className="w-6 h-6 text-neon-cyan" />
                             </div>
 
-                            <h3 className="text-lg md:text-xl font-semibold text-white mb-1">
+                            <h3 className="text-lg md:text-xl font-semibold text-black dark:text-white mb-1">
                                 {edu.degree}
                             </h3>
-                            <p className="text-white/40 text-sm mb-3">{edu.institution}</p>
+                            <p className="text-black/40 dark:text-white/40 text-sm mb-3">{edu.institution}</p>
 
                             <div className="flex items-center gap-3">
                                 <span className="text-neon-cyan/60 text-xs tracking-[0.15em] uppercase">
@@ -73,8 +73,8 @@ export default function Education() {
                                 </span>
                                 <span
                                     className={`text-xs px-2.5 py-0.5 rounded-full ${edu.status === "In Progress"
-                                            ? "bg-neon-cyan/10 text-neon-cyan border border-neon-cyan/30"
-                                            : "bg-white/5 text-white/40 border border-white/10"
+                                        ? "bg-neon-cyan/10 text-neon-cyan border border-neon-cyan/30"
+                                        : "bg-black/5 dark:bg-white/5 text-black/40 dark:text-white/40 border border-black/10 dark:border-white/10"
                                         }`}
                                 >
                                     {edu.status}

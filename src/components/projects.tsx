@@ -113,6 +113,7 @@ function ProjectCard({
                     rotateX: rotation.x,
                     rotateY: rotation.y,
                     scale: isHovered ? 1.02 : 1,
+                    borderColor: isHovered ? "var(--color-primary)" : "var(--color-glass-border)",
                 }}
                 transition={{ type: "spring", stiffness: 300, damping: 20 }}
                 style={{ transformStyle: "preserve-3d" }}
@@ -129,10 +130,10 @@ function ProjectCard({
                         <Icon className="w-6 h-6 text-neon-cyan" />
                     </div>
 
-                    <h3 className="text-xl md:text-2xl font-semibold text-white mb-3">
+                    <h3 className="text-xl md:text-2xl font-semibold text-black dark:text-white mb-3">
                         {project.title}
                     </h3>
-                    <p className="text-white/40 text-sm leading-relaxed mb-6">
+                    <p className="text-black/40 dark:text-white/40 text-sm leading-relaxed mb-6">
                         {project.description}
                     </p>
 
