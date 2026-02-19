@@ -46,7 +46,7 @@ export default function Contact() {
                                 <div>
                                     <label
                                         htmlFor="name"
-                                        className="text-white/40 text-xs tracking-[0.15em] uppercase mb-2 block"
+                                        className="text-black/40 dark:text-white/40 text-xs tracking-[0.15em] uppercase mb-2 block"
                                     >
                                         Name
                                     </label>
@@ -59,7 +59,7 @@ export default function Contact() {
                                 <div>
                                     <label
                                         htmlFor="email"
-                                        className="text-white/40 text-xs tracking-[0.15em] uppercase mb-2 block"
+                                        className="text-black/40 dark:text-white/40 text-xs tracking-[0.15em] uppercase mb-2 block"
                                     >
                                         Email
                                     </label>
@@ -74,7 +74,7 @@ export default function Contact() {
                             <div>
                                 <label
                                     htmlFor="message"
-                                    className="text-white/40 text-xs tracking-[0.15em] uppercase mb-2 block"
+                                    className="text-black/40 dark:text-white/40 text-xs tracking-[0.15em] uppercase mb-2 block"
                                 >
                                     Message
                                 </label>

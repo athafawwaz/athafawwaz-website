@@ -17,8 +17,47 @@ export default function ThemeToggle() {
         return <div className="w-12 h-6" />; // Placeholder to avoid hydration mismatch
     }
 
-    const toggleTheme = () => {
-        setTheme(theme === "dark" ? "light" : "dark");
+    const toggleTheme = (e: React.MouseEvent<HTMLButtonElement>) => {
+        // @ts-ignore - View Transitions API is not yet in all TS definitions
+        if (!document.startViewTransition) {
+            setTheme(theme === "dark" ? "light" : "dark");
+            return;
+        }
+
+        const button = e.currentTarget;
+        const rect = button.getBoundingClientRect();
+        const x = rect.left + rect.width / 2;
+        const y = rect.top + rect.height / 2;
+
+        const endRadius = Math.hypot(
+            Math.max(x, window.innerWidth - x),
+            Math.max(y, window.innerHeight - y)
+        );
+
+        // @ts-ignore
+        const transition = document.startViewTransition(() => {
+            setTheme(theme === "dark" ? "light" : "dark");
+        });
+
+        transition.ready.then(() => {
+            const clipPath = [
+                `circle(0px at ${x}px ${y}px)`,
+                `circle(${endRadius}px at ${x}px ${y}px)`,
+            ];
+
+            // Always animate the NEW view growing on top of the OLD view.
+            // This ensures a consistent "spreading" effect for both Light->Dark and Dark->Light.
+            document.documentElement.animate(
+                {
+                    clipPath: clipPath,
+                },
+                {
+                    duration: 1000, // Slower duration for a smoother feel
+                    easing: "ease-in-out", // Smooth acceleration and deceleration
+                    pseudoElement: "::view-transition-new(root)",
+                }
+            );
+        });
     };
 
     return (

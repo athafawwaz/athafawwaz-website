@@ -218,3 +218,10 @@ html {
 .section-padding {
   @apply px-6 md:px-12 lg:px-24 py-24 md:py-32;
 }
+
+/* ===== View Transitions ===== */
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation: none;
+  mix-blend-mode: normal;
+}
