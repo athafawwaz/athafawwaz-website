@@ -57,7 +57,7 @@ export default function Navbar() {
             transition={{ duration: 0.8, ease: "easeOut" }}
         >
             <motion.div
-                className="absolute inset-0 glass backdrop-blur-3xl"
+                className="absolute inset-0 nav-glass"
                 style={{ opacity: bgOpacity }}
             />
             <div className="relative flex items-center justify-between h-16 md:h-20">

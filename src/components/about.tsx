@@ -65,6 +65,11 @@ export default function About() {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ delay: 0.4 + i * 0.1 }}
+                            style={{
+                                borderColor: "var(--color-glass-border)",
+                                borderWidth: 1,
+                                borderStyle: "solid"
+                            }}
                             whileHover={{
                                 borderColor: "var(--color-primary)",
                                 transition: { duration: 0.3 },
