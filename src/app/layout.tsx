@@ -35,6 +35,7 @@ export const metadata: Metadata = {
 };
 
 import Chatbot from "@/components/chatbot";
+import SpeedtestWidget from "@/components/speedtest-widget";
 
 export default function RootLayout({
   children,
@@ -53,6 +54,7 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           {children}
+          <SpeedtestWidget />
           <Chatbot />
         </ThemeProvider>
       </body>
